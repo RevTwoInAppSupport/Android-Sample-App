@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_bar"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="@dimen/activity_padding">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Trace Log"
+        android:id="@+id/btnTraceLog"
+        android:textColor="#FFF"
+        android:background="#337ab7"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/activity_padding"
+        android:onClick="onTraceLogClick"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Debug Log"
+        android:id="@+id/btnDebugLog"
+        android:textColor="#FFF"
+        android:background="#5bc0de"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/activity_padding"
+        android:onClick="onDebugLogClick"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warning Log"
+        android:id="@+id/btnWarningLog"
+        android:textColor="#FFF"
+        android:background="#f0ad4e"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/activity_padding"
+        android:onClick="onWarningLogClick"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Error Log"
+        android:id="@+id/btnErrorLog"
+        android:textColor="#FFF"
+        android:background="#d9534f"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onErrorLogClick"/>
+    </LinearLayout>
+</FrameLayout>

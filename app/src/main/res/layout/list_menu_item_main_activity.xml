@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rltMenuListItemMainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="18dp"
+    android:paddingTop="18dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/txtMenuItemMainActivity"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgChevronRight"
+        android:src="@mipmap/ic_chevron_right_black_36dp"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/txtMenuItemMainActivity"
+        android:layout_alignEnd="@+id/txtMenuItemMainActivity"
+        android:alpha="0.5"/>
+</RelativeLayout>

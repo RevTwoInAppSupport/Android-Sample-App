@@ -1,0 +1,20 @@
+<resources>
+    <string name="action_create_new_ticket_label">Create new ticket</string>
+    <string name="action_refresh_label">Refresh</string>
+    <string name="app_name">RevTwo</string>
+    <string name="action_settings">Settings</string>
+    <string name="create_ticket_placeholder">Enter description of Ticket</string>
+    <string name="empty_list_view_text">There are no files in this app.</string>
+    <string name="menu_title_logging">Logging</string>
+    <string name="menu_title_file_browsing">File Browsing</string>
+    <string name="menu_title_sqlite_database">SQLite Database</string>
+    <string name="menu_title_create_new_ticket">Create New Ticket</string>
+    <string name="sqlite">
+        By default, the database browsing widget is hooked up to the sample.db database. \n\n
+        You can edit the model to add catalog.db as another database.
+    </string>
+    <string name="title_file_browsing">File browsing</string>
+    <string name="title_sqlite_db">Db browser</string>
+    <string name="title_create_new_ticket">New ticket</string>
+    <string name="title_logging">Logging</string>
+</resources>
