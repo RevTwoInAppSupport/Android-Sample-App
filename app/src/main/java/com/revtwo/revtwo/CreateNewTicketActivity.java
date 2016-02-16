@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import com.revtwo.librevtwo.RevTwo;
+
 /**
  * Created by NIHAD on 10.2.2016.
  */
