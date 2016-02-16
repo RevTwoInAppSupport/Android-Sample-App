@@ -1,2 +1,6 @@
 include ':app'
+<<<<<<< HEAD
 include ':app:libs:librevtwo'
+=======
+//include ':libraries:LibRevTwo:librevtwo'
+>>>>>>> 8826df76e7b721872bd9bb56f20cc096dd03457c
