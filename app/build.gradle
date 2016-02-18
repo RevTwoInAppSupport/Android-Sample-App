@@ -24,9 +24,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
-<<<<<<< HEAD
     compile project('libs:librevtwo')
-=======
-    //compile project(':libraries:LibRevTwo:librevtwo')
->>>>>>> 8826df76e7b721872bd9bb56f20cc096dd03457c
 }

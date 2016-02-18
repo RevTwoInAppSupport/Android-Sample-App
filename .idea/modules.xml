@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/RevTwoSampleApp.iml" filepath="$PROJECT_DIR$/RevTwoSampleApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android-Sample-App.iml" filepath="$PROJECT_DIR$/Android-Sample-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/libs/librevtwo/librevtwo.iml" filepath="$PROJECT_DIR$/app/libs/librevtwo/librevtwo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/libs/libs.iml" filepath="$PROJECT_DIR$/app/libs/libs.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/Android-Sample-App.iml" filepath="$PROJECT_DIR$/Android-Sample-App.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
->>>>>>> 8826df76e7b721872bd9bb56f20cc096dd03457c
     </modules>
   </component>
 </project>

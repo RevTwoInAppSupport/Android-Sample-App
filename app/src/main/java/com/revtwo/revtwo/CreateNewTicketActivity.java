@@ -16,6 +16,7 @@ import com.revtwo.librevtwo.RevTwo;
  */
 public class CreateNewTicketActivity extends BaseActivity {
     private EditText ticketDescription;
+    private RevTwo revTwo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class CreateNewTicketActivity extends BaseActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setTitle(this.getString(R.string.title_create_new_ticket));
         ticketDescription = (EditText) findViewById(R.id.txtTicketDescription);
+        revTwo = new RevTwo(this);
     }
 
     @Override
@@ -38,9 +40,10 @@ public class CreateNewTicketActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_create_new_ticket:
-                TelephonyManager tMgr = (TelephonyManager)CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                String phoneNumber = tMgr.getLine1Number();
+                //TelephonyManager tMgr = (TelephonyManager)CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+                //String phoneNumber = tMgr.getLine1Number();
                 String description = ticketDescription.getText().toString();
+                revTwo.r2OpenTicket(description, "test", "test", "test", false);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
