@@ -40,10 +40,10 @@ public class CreateNewTicketActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_create_new_ticket:
-                //TelephonyManager tMgr = (TelephonyManager)CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                //String phoneNumber = tMgr.getLine1Number();
+                TelephonyManager tMgr = (TelephonyManager)CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+                String phoneNumber = tMgr.getLine1Number();
                 String description = ticketDescription.getText().toString();
-                revTwo.r2OpenTicket(description, "test", "test", "test", false);
+                revTwo.r2OpenTicket(description, "Nihad Ahmetovic", "n@a.com", phoneNumber, false);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
