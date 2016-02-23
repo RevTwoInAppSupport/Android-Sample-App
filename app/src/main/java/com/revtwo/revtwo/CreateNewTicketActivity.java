@@ -7,7 +7,10 @@ import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.revtwo.librevtwo.RevTwo;
 
@@ -17,6 +20,9 @@ import com.revtwo.librevtwo.RevTwo;
 public class CreateNewTicketActivity extends BaseActivity {
     private EditText ticketDescription;
     private RevTwo revTwo;
+    private LinearLayout lnrTexts;
+    private TextView txtCancelHelpRequest;
+    private MenuItem createNewTicketMenuItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +34,26 @@ public class CreateNewTicketActivity extends BaseActivity {
         ab.setTitle(this.getString(R.string.title_create_new_ticket));
         ticketDescription = (EditText) findViewById(R.id.txtTicketDescription);
         revTwo = new RevTwo(this);
+        lnrTexts = (LinearLayout)findViewById(R.id.lnrTexts);
+        txtCancelHelpRequest = (TextView)findViewById(R.id.txtCancelHelpRequest);
+        if(revTwo.r2IsTicketOpen()) {
+            lnrTexts.setVisibility(View.VISIBLE);
+            createNewTicketMenuItem.setVisible(false);
+        }
+        txtCancelHelpRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                revTwo.r2CloseTicket();
+                lnrTexts.setVisibility(View.GONE);
+                createNewTicketMenuItem.setVisible(true);
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_create_new_ticket_activity, menu);
+        createNewTicketMenuItem = menu.getItem(0); // android:id="@+id/action_create_new_ticket"
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -44,6 +65,8 @@ public class CreateNewTicketActivity extends BaseActivity {
                 String phoneNumber = tMgr.getLine1Number();
                 String description = ticketDescription.getText().toString();
                 revTwo.r2OpenTicket(description, "Nihad Ahmetovic", "n@a.com", phoneNumber, false);
+                lnrTexts.setVisibility(View.VISIBLE);
+                createNewTicketMenuItem.setVisible(false);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

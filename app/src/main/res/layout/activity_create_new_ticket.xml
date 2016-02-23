@@ -4,11 +4,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <include layout="@layout/action_bar"/>
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/txtTicketDescription"
-        android:gravity="center_vertical"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:hint="@string/create_ticket_placeholder"/>
+        android:orientation="vertical"
+        android:weightSum="1">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtTicketDescription"
+            android:gravity="center_vertical"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:hint="@string/create_ticket_placeholder"
+            android:layout_weight="0.95"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lnrTexts"
+            android:orientation="vertical"
+            android:layout_weight="0.05"
+            android:weightSum="1"
+            android:layout_margin="20dp"
+            android:textAlignment="center"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help_request_text"
+                android:id="@+id/txtDesc"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dp"
+                android:alpha="0.7"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cancel_help_request_label"
+                android:id="@+id/txtCancelHelpRequest"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dp"
+                android:textColor="#007aff"
+                android:layout_weight="0.05"/>
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>
