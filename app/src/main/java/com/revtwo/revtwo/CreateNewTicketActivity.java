@@ -36,10 +36,7 @@ public class CreateNewTicketActivity extends BaseActivity {
         revTwo = new RevTwo(this);
         lnrTexts = (LinearLayout)findViewById(R.id.lnrTexts);
         txtCancelHelpRequest = (TextView)findViewById(R.id.txtCancelHelpRequest);
-        if(revTwo.r2IsTicketOpen()) {
-            lnrTexts.setVisibility(View.VISIBLE);
-            createNewTicketMenuItem.setVisible(false);
-        }
+
         txtCancelHelpRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +51,10 @@ public class CreateNewTicketActivity extends BaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_create_new_ticket_activity, menu);
         createNewTicketMenuItem = menu.getItem(0); // android:id="@+id/action_create_new_ticket"
+        if(revTwo.r2IsTicketOpen()) {
+            lnrTexts.setVisibility(View.VISIBLE);
+            createNewTicketMenuItem.setVisible(false);
+        }
         return super.onCreateOptionsMenu(menu);
     }
 

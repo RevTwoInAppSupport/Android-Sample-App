@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView lstMenu;
     private ArrayAdapter<String> lstAdapter;
     private List<MenuItemMainActivity> menuItems;
+    private RevTwo revTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         lstAdapter = new MenuMainActivityAdapter(this, R.layout.list_menu_item_main_activity, menuItems);
         lstMenu.setAdapter(lstAdapter);
         lstMenu.setOnItemClickListener(new OnMenuItemClick());
-        new RevTwo(this).r2Intialize("253B1C2A-34FB-A08A-3981-4B3D87728C9B", "3qQJsrLpNnWvCbD6PcKHztS5d", 0);
+        revTwo = new RevTwo(this);
+        revTwo.r2Intialize("253B1C2A-34FB-A08A-3981-4B3D87728C9B", "3qQJsrLpNnWvCbD6PcKHztS5d", 0);
+        revTwo.r2CustomizeIncomingCallText("zajim kujovic");
     }
 
     private void loadMenuItems(){
