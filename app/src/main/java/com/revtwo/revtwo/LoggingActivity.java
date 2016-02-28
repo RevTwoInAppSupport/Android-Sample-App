@@ -31,18 +31,10 @@ public class LoggingActivity extends BaseActivity {
 
     public void onTraceLogClick(View v) {
         revTwo.r2Trace("Trace Log Message");
-
-        try {
-            new R2CallReceiver(this.getApplicationContext()).startPubnub("253B1C2A-34FB-A08A-3981-4B3D87728C9B", "3qQJsrLpNnWvCbD6PcKHztS5d", "key");
-        } catch (PubnubException e) {
-            e.printStackTrace();
-        }
     }
 
     public void onDebugLogClick(View v) {
         revTwo.r2Debug("Debug Log Message");
-
-        revTwo.r2CloseTicket();
     }
 
     public void onWarningLogClick(View v) {
