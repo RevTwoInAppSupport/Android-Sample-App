@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import com.revtwo.librevtwo.IncomingCallActivity;
-import com.revtwo.librevtwo.R2CallReceiver;
 import com.revtwo.librevtwo.RevTwo;
 import com.revtwo.revtwo.adapters.MenuMainActivityAdapter;
 import com.revtwo.revtwo.enums.MenuEnum;
