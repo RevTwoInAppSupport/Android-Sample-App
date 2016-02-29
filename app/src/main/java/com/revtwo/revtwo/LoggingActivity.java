@@ -31,8 +31,6 @@ public class LoggingActivity extends BaseActivity {
 
     public void onDebugLogClick(View v) {
         revTwo.r2Debug("Debug Log Message");
-
-        revTwo.r2CloseTicket();
     }
 
     public void onWarningLogClick(View v) {
