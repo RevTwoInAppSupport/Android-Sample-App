@@ -63,9 +63,9 @@ public class CreateNewTicketActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.action_create_new_ticket:
                 TelephonyManager tMgr = (TelephonyManager)CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                String phoneNumber = tMgr.getLine1Number();
+                //String phoneNumber = tMgr.getLine1Number();
                 String description = ticketDescription.getText().toString();
-                revTwo.r2OpenTicket(description, "Nihad Ahmetovic", "n@a.com", phoneNumber, false);
+                revTwo.r2OpenTicket(description, "Nihad Ahmetovic", "n@a.com", "0603411258", false);
                 lnrTexts.setVisibility(View.VISIBLE);
                 createNewTicketMenuItem.setVisible(false);
                 return true;

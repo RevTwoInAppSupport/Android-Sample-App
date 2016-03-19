@@ -1,6 +1,7 @@
 package com.revtwo.revtwo;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -32,16 +33,34 @@ public class FileBrowsingActivity extends BaseActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setTitle(this.getString(R.string.title_file_browsing));
         refreshFileList();
-        lstAdapter = new ArrayAdapter<String>(this, R.layout.list_menu_item, R.id.txtMenuItem, fileNames);
-        lstAppFiles.setAdapter(lstAdapter);
     }
 
     private void refreshFileList() {
         fileNames = new ArrayList<String>();
-        File dir = getFilesDir();
-        for(File f: dir.listFiles()) {
-            fileNames.add(f.getName().toString());
+        this.getFilesFromStorages(getFilesDir().getParent());
+        lstAdapter = new ArrayAdapter<String>(this, R.layout.list_menu_item, R.id.txtMenuItem, fileNames);
+        lstAppFiles.setAdapter(lstAdapter);
+    }
+
+    private void getFilesFromStorages(String path) {
+        File file = new File(path);
+        String[] parentList = file.list();
+        if(parentList != null) {
+            for(File f: file.listFiles()) {
+                if(f.isDirectory()) {
+                    this.getFilesFromStorages(f.getAbsolutePath());
+                } else {
+                    String parent = getParentDir(f);
+                    fileNames.add(f.getName().toString());
+                }
+            }
         }
+    }
+
+    private String getParentDir(File f) {
+        String parent = f.getParent();
+        String[] parentSplit = parent.split("/");
+        return parentSplit[parentSplit.length - 1];
     }
 
     @Override
@@ -54,6 +73,7 @@ public class FileBrowsingActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_refresh_page:
+                this.refreshFileList();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
