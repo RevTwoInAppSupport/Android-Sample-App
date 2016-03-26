@@ -34,6 +34,7 @@ public class CreateNewTicketActivity extends BaseActivity {
         ab.setTitle(this.getString(R.string.title_create_new_ticket));
         ticketDescription = (EditText) findViewById(R.id.txtTicketDescription);
         revTwo = new RevTwo(this);
+        revTwo.r2RegisterActivityForScreenshot(this);
         lnrTexts = (LinearLayout)findViewById(R.id.lnrTexts);
         txtCancelHelpRequest = (TextView)findViewById(R.id.txtCancelHelpRequest);
 

@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         revTwo = new RevTwo(this);
         revTwo.r2Intialize("253B1C2A-34FB-A08A-3981-4B3D87728C9B", "3qQJsrLpNnWvCbD6PcKHztS5d", 0);
         revTwo.r2CustomizeIncomingCallText("zajim kujovic");
+        revTwo.r2RegisterActivityForScreenshot(this);
     }
 
     private void loadMenuItems(){
