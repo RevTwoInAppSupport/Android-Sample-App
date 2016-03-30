@@ -23,6 +23,7 @@ public class LoggingActivity extends BaseActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setTitle(this.getString(R.string.title_logging));
         revTwo = new RevTwo(this);
+        revTwo.r2RegisterActivityForScreenshot(this);
     }
 
     public void onTraceLogClick(View v) {

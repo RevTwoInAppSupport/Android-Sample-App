@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.revtwo.librevtwo.RevTwo;
+
 import java.io.File;
 import java.util.ArrayList;
 /**
@@ -20,6 +22,8 @@ public class FileBrowsingActivity extends BaseActivity {
     private ListView lstAppFiles;
     private ArrayAdapter<String> lstAdapter;
     private TextView emptyListViewText;
+    private RevTwo revTwo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,8 @@ public class FileBrowsingActivity extends BaseActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setTitle(this.getString(R.string.title_file_browsing));
+        revTwo = new RevTwo(this);
+        revTwo.r2RegisterActivityForScreenshot(this);
         refreshFileList();
     }
 
