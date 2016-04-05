@@ -20,6 +20,7 @@
     </string>
     <string name="title_file_browsing">File browsing</string>
     <string name="title_sqlite_db">Db browser</string>
-    <string name="title_create_new_ticket">New ticket</string>
+    <string name="title_ask_for_help">Ask for help</string>
+    <string name="title_you_have_open_help_request">You have an open help request</string>
     <string name="title_logging">Logging</string>
 </resources>

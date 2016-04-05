@@ -26,4 +26,10 @@
         android:id="@+id/lstMenu"
         android:layout_gravity="top"
         android:layout_marginTop="?attr/actionBarSize"/>
+    <fragment
+        android:id="@+id/frgmList"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class = "com.revtwo.revtwo.BaseFragment"/>
 </FrameLayout>

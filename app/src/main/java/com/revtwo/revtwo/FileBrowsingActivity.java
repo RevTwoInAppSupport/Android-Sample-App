@@ -1,12 +1,15 @@
 package com.revtwo.revtwo;
 
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,34 +20,50 @@ import java.util.ArrayList;
 /**
  * Created by NIHAD on 11.2.2016.
  */
-public class FileBrowsingActivity extends BaseActivity {
+public class FileBrowsingActivity extends BaseFragment {
     private ArrayList<String> fileNames;
     private ListView lstAppFiles;
     private ArrayAdapter<String> lstAdapter;
     private TextView emptyListViewText;
-    private RevTwo revTwo;
+    private View mainView;
+    private Toolbar myToolbar;
+    private TextView txtThirdButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_file_browsing);
-        lstAppFiles = (ListView)findViewById(R.id.lstAppFiles);
-        emptyListViewText = (TextView)findViewById(android.R.id.empty);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mainView = inflater.inflate(R.layout.activity_file_browsing, null);
+        lstAppFiles = (ListView)mainView.findViewById(R.id.lstAppFiles);
+        emptyListViewText = (TextView)mainView.findViewById(android.R.id.empty);
         lstAppFiles.setEmptyView(emptyListViewText);
-        myToolbar = (Toolbar) findViewById(R.id.tlbActionBar);
-        setSupportActionBar(myToolbar);
-        ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
-        ab.setTitle(this.getString(R.string.title_file_browsing));
-        revTwo = new RevTwo(this);
-        revTwo.r2RegisterActivityForScreenshot(this);
+        myToolbar = (Toolbar) mainView.findViewById(R.id.tlbActionBar);
+
+        ((AppCompatActivity)getActivity()).setSupportActionBar(myToolbar);
+        this.showThirdButton("refresh");
+        txtThirdButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshFileList();
+            }
+        });
+
+        this.removeDefaultTitle();
+        this.setTitle(this.getString(R.string.title_file_browsing), mainView);
+        this.setOnBackPressed(mainView, FileBrowsingActivity.this);
+
         refreshFileList();
+        return mainView;
+    }
+
+    protected void showThirdButton(String text) {
+        txtThirdButton = (TextView)mainView.findViewById(R.id.txtThirdButton);
+        txtThirdButton.setText(text);
+        txtThirdButton.setVisibility(View.VISIBLE);
     }
 
     private void refreshFileList() {
         fileNames = new ArrayList<String>();
-        this.getFilesFromStorages(getFilesDir().getParent());
-        lstAdapter = new ArrayAdapter<String>(this, R.layout.list_menu_item, R.id.txtMenuItem, fileNames);
+        this.getFilesFromStorages(getActivity().getFilesDir().getParent());
+        lstAdapter = new ArrayAdapter<String>(this.getContext(), R.layout.list_menu_item, R.id.txtMenuItem, fileNames);
         lstAppFiles.setAdapter(lstAdapter);
     }
 
@@ -67,22 +86,5 @@ public class FileBrowsingActivity extends BaseActivity {
         String parent = f.getParent();
         String[] parentSplit = parent.split("/");
         return parentSplit[parentSplit.length - 1];
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_file_browsing_activity, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_refresh_page:
-                this.refreshFileList();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 }

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <include layout="@layout/action_bar"/>
 
@@ -20,7 +18,7 @@
         android:text="Trace Log"
         android:id="@+id/btnTraceLog"
         android:textColor="#FFF"
-        android:background="#337ab7"
+        android:background="#aaaaaa"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/activity_padding"
         android:onClick="onTraceLogClick"/>
@@ -30,7 +28,7 @@
         android:text="Debug Log"
         android:id="@+id/btnDebugLog"
         android:textColor="#FFF"
-        android:background="#5bc0de"
+        android:background="#b0c1d2"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/activity_padding"
         android:onClick="onDebugLogClick"/>
@@ -40,7 +38,7 @@
         android:text="Warning Log"
         android:id="@+id/btnWarningLog"
         android:textColor="#FFF"
-        android:background="#f0ad4e"
+        android:background="#facf20"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/activity_padding"
         android:onClick="onWarningLogClick"/>
@@ -50,7 +48,7 @@
         android:text="Error Log"
         android:id="@+id/btnErrorLog"
         android:textColor="#FFF"
-        android:background="#d9534f"
+        android:background="#b20122"
         android:layout_gravity="center_horizontal"
         android:onClick="onErrorLogClick"/>
     </LinearLayout>

@@ -24,5 +24,5 @@
         android:layout_centerVertical="true"
         android:layout_alignRight="@+id/txtMenuItemMainActivity"
         android:layout_alignEnd="@+id/txtMenuItemMainActivity"
-        android:alpha="0.5"/>
+        android:alpha="0.2"/>
 </RelativeLayout>

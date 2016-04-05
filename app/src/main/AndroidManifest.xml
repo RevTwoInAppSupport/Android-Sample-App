@@ -33,26 +33,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoggingActivity"
-            android:label="@string/app_name">
+            android:name=".RevTwoSplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".SQLiteDatabaseActivity"
-            android:label="@string/app_name">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".FileBrowsingActivity"
-            android:label="@string/app_name">
-            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
