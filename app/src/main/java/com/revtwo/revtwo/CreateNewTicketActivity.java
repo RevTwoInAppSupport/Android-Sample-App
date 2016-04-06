@@ -66,25 +66,30 @@ public class CreateNewTicketActivity extends AppCompatActivity {
         }
         ticketDescription.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                    switch (keyCode) {
-                        case KeyEvent.KEYCODE_DPAD_CENTER:
-                        case KeyEvent.KEYCODE_ENTER:
-                            TelephonyManager tMgr = (TelephonyManager) CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                            //String phoneNumber = tMgr.getLine1Number();
-                            String description = ticketDescription.getText().toString();
-                            revTwo.r2OpenTicket(description, "Nihad Ahmetovic", "n@a.com", "0603411258", false);
-                            CreateNewTicketActivity.this.setTitle(CreateNewTicketActivity.this.getString(R.string.title_you_have_open_help_request));
-                            lnrTexts.setVisibility(View.VISIBLE);
-                            txtTicketLabelMessage.setText(ticketDescription.getText().toString());
-                            txtTicketLabelMessage.setVisibility(View.VISIBLE);
-                            ticketDescription.setText("");
-                            ticketDescription.setVisibility(View.INVISIBLE);
-                            return true;
-                        default:
-                            break;
+                try {
+                    if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                        switch (keyCode) {
+                            case KeyEvent.KEYCODE_DPAD_CENTER:
+                            case KeyEvent.KEYCODE_ENTER:
+                                TelephonyManager tMgr = (TelephonyManager) CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+                                String phoneNumber = tMgr.getLine1Number();
+                                String description = ticketDescription.getText().toString();
+                                revTwo.r2OpenTicket(description, tMgr.getSimOperatorName(), tMgr.getNetworkOperatorName(), phoneNumber, false);
+                                CreateNewTicketActivity.this.setTitle(CreateNewTicketActivity.this.getString(R.string.title_you_have_open_help_request));
+                                lnrTexts.setVisibility(View.VISIBLE);
+                                txtTicketLabelMessage.setText(ticketDescription.getText().toString());
+                                txtTicketLabelMessage.setVisibility(View.VISIBLE);
+                                ticketDescription.setText("");
+                                ticketDescription.setVisibility(View.INVISIBLE);
+                                return true;
+                            default:
+                                break;
+                        }
                     }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+
                 return false;
             }
         });
