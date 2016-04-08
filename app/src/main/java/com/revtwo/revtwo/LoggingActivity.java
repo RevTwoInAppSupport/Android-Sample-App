@@ -41,7 +41,7 @@ public class LoggingActivity extends BaseFragment {
         btnErrorLog = (Button)mainView.findViewById(R.id.btnErrorLog);
 
         revTwo = new RevTwo(this.getContext());
-
+        revTwo.r2RegisterActivityForScreenshot(this.getActivity());
         btnTraceLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

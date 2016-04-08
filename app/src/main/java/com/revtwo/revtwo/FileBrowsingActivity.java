@@ -49,7 +49,7 @@ public class FileBrowsingActivity extends BaseFragment {
         this.removeDefaultTitle();
         this.setTitle(this.getString(R.string.title_file_browsing), mainView);
         this.setOnBackPressed(mainView, FileBrowsingActivity.this);
-
+        new RevTwo(this.getContext()).r2RegisterActivityForScreenshot(this.getActivity());
         refreshFileList();
         return mainView;
     }

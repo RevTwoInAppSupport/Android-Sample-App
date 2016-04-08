@@ -32,7 +32,7 @@ public class SQLiteDatabaseActivity extends BaseFragment {
         this.removeDefaultTitle();
         this.setTitle(this.getString(R.string.title_sqlite_db), mainView);
         this.setOnBackPressed(mainView, SQLiteDatabaseActivity.this);
-
+        new RevTwo(this.getContext()).r2RegisterActivityForScreenshot(this.getActivity());
         return mainView;
     }
 }
