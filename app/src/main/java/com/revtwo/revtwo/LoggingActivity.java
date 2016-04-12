@@ -8,65 +8,58 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.revtwo.librevtwo.RevTwo;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 /**
  * Created by Zajim on 10-Feb-16.
  */
-public class LoggingActivity extends BaseFragment {
+public class LoggingActivity extends RFragment {
     private RevTwo revTwo;
-    private Toolbar myToolbar;
-    private View mainView;
-    private Button btnTraceLog;
-    private Button btnDebugLog;
-    private Button btnWarningLog;
-    private Button btnErrorLog;
+    @Bind(R.id.tlbActionBar)
+    Toolbar myToolbar;
+    @Bind(R.id.txtTitle)
+    TextView title;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mainView = inflater.inflate(R.layout.activity_logging, null);
-        myToolbar = (Toolbar) mainView.findViewById(R.id.tlbActionBar);
+        View view = inflater.inflate(R.layout.activity_logging, null);
+        ButterKnife.bind(this, view);
+
         ((AppCompatActivity)getActivity()).setSupportActionBar(myToolbar);
 
-        this.removeDefaultTitle();
-        this.setTitle(this.getString(R.string.title_logging), mainView);
-        this.setOnBackPressed(mainView, LoggingActivity.this);
-
-        btnTraceLog = (Button)mainView.findViewById(R.id.btnTraceLog);
-        btnDebugLog = (Button)mainView.findViewById(R.id.btnDebugLog);
-        btnWarningLog = (Button)mainView.findViewById(R.id.btnWarningLog);
-        btnErrorLog = (Button)mainView.findViewById(R.id.btnErrorLog);
+        this.setTitle(this.getString(R.string.title_logging), title);
 
         revTwo = new RevTwo(this.getContext());
         revTwo.r2RegisterActivityForScreenshot(this.getActivity());
-        btnTraceLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                revTwo.r2Trace("Trace Log Message");
-            }
-        });
-        btnDebugLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                revTwo.r2Debug("Debug Log Message");
-            }
-        });
-        btnWarningLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                revTwo.r2Warn("Warning Log Message");
-            }
-        });
-        btnErrorLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                revTwo.r2Error("Error Log Message");
-            }
-        });
 
-        return mainView;
+        return view;
     }
+
+    @OnClick(R.id.btnTraceLog)
+    public void sendTraceLog(){
+        revTwo.r2Trace("Trace Log Message");
+
+    }
+    @OnClick(R.id.btnDebugLog)
+    public void sendDebugLog(){
+        revTwo.r2Debug("Debug Log Message");
+
+    }
+    @OnClick(R.id.btnWarningLog)
+    public void sendWarningLog(){
+        revTwo.r2Warn("Warning Log Message");
+    }
+    @OnClick(R.id.btnErrorLog)
+    public void sendErrorLog(){
+        revTwo.r2Error("Error Log Message");
+    }
+
 }

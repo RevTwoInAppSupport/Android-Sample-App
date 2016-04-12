@@ -3,11 +3,11 @@ package com.revtwo.revtwo.models;
 /**
  * Created by Zajim on 13-Feb-16.
  */
-public class MenuItemMainActivity {
+public class MenuItem {
     private int id;
     private String title;
 
-    public MenuItemMainActivity(int id, String title) {
+    public MenuItem(int id, String title) {
         this.id = id;
         this.title = title;
     }

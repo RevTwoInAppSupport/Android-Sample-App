@@ -6,24 +6,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.revtwo.revtwo.R;
-import com.revtwo.revtwo.models.MenuItemMainActivity;
+import com.revtwo.revtwo.models.MenuItem;
 
 import java.util.List;
 
 /**
  * Created by Zajim on 13-Feb-16.
  */
-public class MenuMainActivityAdapter extends ArrayAdapter {
+public class MainMenuAdapter extends ArrayAdapter {
 
     private Context context;
-    private List<MenuItemMainActivity> items;
+    private List<MenuItem> items;
     private @LayoutRes int resource;
 
-    public MenuMainActivityAdapter(Context context, @LayoutRes int resource, List<MenuItemMainActivity> items) {
+    public MainMenuAdapter(Context context, @LayoutRes int resource, List<MenuItem> items) {
         super(context, resource, R.id.rltMenuListItemMainActivity, items.toArray());
         this.context = context;
         this.items = items;
@@ -33,7 +32,7 @@ public class MenuMainActivityAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View menuListItem = convertView;
-        MenuItemMainActivity item = this.items.get(position);
+        MenuItem item = this.items.get(position);
         MenuViewHolder menuViewHolder = null;
         if (menuListItem == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
