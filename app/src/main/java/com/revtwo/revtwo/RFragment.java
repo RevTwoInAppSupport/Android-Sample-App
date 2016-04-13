@@ -22,4 +22,8 @@ public class RFragment extends Fragment {
         ((MainActivity)getActivity()).onBackPressed();
     }
 
+    public static boolean showAnimation(){
+        return true;
+    }
+
 }

@@ -18,10 +18,14 @@ public class RActivity extends AppCompatActivity {
 
         boolean isInBackStack;
 
+
         isInBackStack = fm.popBackStackImmediate(fragmentName, 0);
 
         FragmentTransaction fragTM = fm.beginTransaction();
 
+        if(getSupportFragmentManager().getBackStackEntryCount()>0) {
+            fragTM.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+        }
 
         if(!isInBackStack) {
             try {
@@ -37,8 +41,7 @@ public class RActivity extends AppCompatActivity {
             fragTM.addToBackStack(fragmentName);
         }
 
-        fragTM.setTransition(FragmentTransaction.TRANSIT_NONE);
-        fragTM.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+        //fragTM.setTransition(FragmentTransaction.);
         fragTM.commitAllowingStateLoss();
 
         fm.executePendingTransactions();
