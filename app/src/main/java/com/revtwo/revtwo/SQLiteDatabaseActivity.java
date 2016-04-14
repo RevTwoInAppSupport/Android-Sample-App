@@ -15,24 +15,29 @@ import android.widget.TextView;
 
 import com.revtwo.librevtwo.RevTwo;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by NIHAD on 11.2.2016.
  */
-public class SQLiteDatabaseActivity extends BaseFragment {
+public class SQLiteDatabaseActivity extends RFragment {
 
-    private View mainView;
-    private Toolbar myToolbar;
+    @Bind(R.id.tlbActionBar)
+    Toolbar myToolbar;
+    @Bind(R.id.txtTitle)
+    TextView title;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mainView = inflater.inflate(R.layout.activity_sqlite_database, null);
-        myToolbar = (Toolbar) mainView.findViewById(R.id.tlbActionBar);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(myToolbar);
-
-        this.removeDefaultTitle();
-        this.setTitle(this.getString(R.string.title_sqlite_db), mainView);
-        this.setOnBackPressed(mainView, SQLiteDatabaseActivity.this);
+        View view = inflater.inflate(R.layout.activity_sqlite_database, null);
+        ButterKnife.bind(this,view);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(myToolbar);
+        this.setTitle(this.getString(R.string.title_sqlite_db), title);
         new RevTwo(this.getContext()).r2RegisterActivityForScreenshot(this.getActivity());
-        return mainView;
+        return view;
     }
+
+
 }

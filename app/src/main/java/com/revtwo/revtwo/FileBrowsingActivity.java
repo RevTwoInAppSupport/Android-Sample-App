@@ -16,46 +16,52 @@ import android.widget.TextView;
 import com.revtwo.librevtwo.RevTwo;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Created by NIHAD on 11.2.2016.
  */
-public class FileBrowsingActivity extends BaseFragment {
+public class FileBrowsingActivity extends RFragment {
     private ArrayList<String> fileNames;
-    private ListView lstAppFiles;
-    private ArrayAdapter<String> lstAdapter;
-    private TextView emptyListViewText;
-    private View mainView;
-    private Toolbar myToolbar;
-    private TextView txtThirdButton;
+    ArrayAdapter<String> lstAdapter;
+
+    @Bind(R.id.lstAppFiles)
+    ListView lstAppFiles;
+    @Bind(android.R.id.empty)
+    TextView emptyListViewText;
+    @Bind(R.id.tlbActionBar)
+    Toolbar myToolbar;
+    @Bind(R.id.txtThirdButton)
+    TextView txtThirdButton;
+    @Bind(R.id.txtTitle)
+    TextView title;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mainView = inflater.inflate(R.layout.activity_file_browsing, null);
-        lstAppFiles = (ListView)mainView.findViewById(R.id.lstAppFiles);
-        emptyListViewText = (TextView)mainView.findViewById(android.R.id.empty);
+        View view = inflater.inflate(R.layout.activity_file_browsing, container,false);
+        ButterKnife.bind(this, view);
         lstAppFiles.setEmptyView(emptyListViewText);
-        myToolbar = (Toolbar) mainView.findViewById(R.id.tlbActionBar);
-
         ((AppCompatActivity)getActivity()).setSupportActionBar(myToolbar);
-        this.showThirdButton("refresh");
-        txtThirdButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                refreshFileList();
-            }
-        });
-
-        this.removeDefaultTitle();
-        this.setTitle(this.getString(R.string.title_file_browsing), mainView);
-        this.setOnBackPressed(mainView, FileBrowsingActivity.this);
+        this.setTitle(this.getString(R.string.title_file_browsing), title);
         new RevTwo(this.getContext()).r2RegisterActivityForScreenshot(this.getActivity());
+        this.showThirdButton("refresh");
         refreshFileList();
-        return mainView;
+
+        return view;
+    }
+
+    @OnClick(R.id.txtThirdButton)
+    public void onRefresh(){
+        refreshFileList();
     }
 
     protected void showThirdButton(String text) {
-        txtThirdButton = (TextView)mainView.findViewById(R.id.txtThirdButton);
         txtThirdButton.setText(text);
         txtThirdButton.setVisibility(View.VISIBLE);
     }
@@ -76,7 +82,9 @@ public class FileBrowsingActivity extends BaseFragment {
                     this.getFilesFromStorages(f.getAbsolutePath());
                 } else {
                     String parent = getParentDir(f);
-                    fileNames.add(f.getName().toString());
+
+                    fileNames.add(getPath(f.getAbsolutePath()));
+
                 }
             }
         }
@@ -86,5 +94,9 @@ public class FileBrowsingActivity extends BaseFragment {
         String parent = f.getParent();
         String[] parentSplit = parent.split("/");
         return parentSplit[parentSplit.length - 1];
+    }
+
+    private String getPath(String fullPath){
+        return fullPath.split(getActivity().getPackageName())[1].replaceFirst("/","");
     }
 }
