@@ -3,6 +3,7 @@ package com.revtwo.revtwo;
 import android.os.Bundle;;
 import android.support.v7.widget.Toolbar;
 
+import com.revtwo.librevtwo.R2ModeEnum;
 import com.revtwo.librevtwo.RevTwo;
 
 import butterknife.Bind;
@@ -19,7 +20,7 @@ public class MainActivity extends RActivity {
     ButterKnife.bind(this);
 
     revTwo = new RevTwo(this);
-    revTwo.r2Intialize("253B1C2A-34FB-A08A-3981-4B3D87728C9B", "3qQJsrLpNnWvCbD6PcKHztS5d", 0);
+    revTwo.r2Intialize("253B1C2A-34FB-A08A-3981-4B3D87728C9B", "3qQJsrLpNnWvCbD6PcKHztS5d", R2ModeEnum.R2MODE_DEVELOPMENT.getValue());
     /*revTwo.r2CustomizeIncomingCallText("Nihad Ahmetovic calling");
         revTwo.r2CustomizeIncomingCallBackgroundColor("#CDCDCD");
         revTwo.r2CustomizeIncomingCallTextColor("#EEEEEE");

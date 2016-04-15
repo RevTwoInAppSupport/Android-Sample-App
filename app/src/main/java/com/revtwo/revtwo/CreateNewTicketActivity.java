@@ -80,10 +80,10 @@ public class CreateNewTicketActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 boolean handled = false;
                 if (actionId == EditorInfo.IME_ACTION_SEND) {
-                    TelephonyManager tMgr = (TelephonyManager) CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                    String phoneNumber = tMgr.getLine1Number();
+                    /*TelephonyManager tMgr = (TelephonyManager) CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+                    String phoneNumber = tMgr.getLine1Number();*/
                     String description = ticketDescription.getText().toString();
-                    revTwo.r2OpenTicket(description, tMgr.getSimOperatorName(), tMgr.getNetworkOperatorName(), phoneNumber, false);
+                    revTwo.r2OpenTicket(description, "Test Sample", "mail@gmail.com", "061111111", false);
                     CreateNewTicketActivity.this.setTitle(CreateNewTicketActivity.this.getString(R.string.title_you_have_open_help_request));
                     lnrTexts.setVisibility(View.VISIBLE);
                     txtTicketLabelMessage.setText(ticketDescription.getText().toString());
@@ -95,36 +95,7 @@ public class CreateNewTicketActivity extends AppCompatActivity {
                 return handled;
             }
         });
-        /*ticketDescription.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                try {
-                    if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                        switch (keyCode) {
-                            case KeyEvent.KEYCODE_DPAD_CENTER:
-                            case KeyEvent.KEYCODE_ENTER:
-                                TelephonyManager tMgr = (TelephonyManager) CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                                String phoneNumber = tMgr.getLine1Number();
-                                String description = ticketDescription.getText().toString();
-                                revTwo.r2OpenTicket(description, tMgr.getSimOperatorName(), tMgr.getNetworkOperatorName(), phoneNumber, false);
-                                CreateNewTicketActivity.this.setTitle(CreateNewTicketActivity.this.getString(R.string.title_you_have_open_help_request));
-                                lnrTexts.setVisibility(View.VISIBLE);
-                                txtTicketLabelMessage.setText(ticketDescription.getText().toString());
-                                txtTicketLabelMessage.setVisibility(View.VISIBLE);
-                                ticketDescription.setText("");
-                                ticketDescription.setVisibility(View.INVISIBLE);
-                                return true;
-                            default:
-                                break;
-                        }
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
 
-                return false;
-            }
-        });*/
         txtCancelHelpRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
