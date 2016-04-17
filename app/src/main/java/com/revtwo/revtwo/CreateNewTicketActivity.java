@@ -1,14 +1,23 @@
 package com.revtwo.revtwo;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -64,35 +73,29 @@ public class CreateNewTicketActivity extends AppCompatActivity {
             ticketDescription.setVisibility(View.VISIBLE);
             txtTicketLabelMessage.setVisibility(View.GONE);
         }
-        ticketDescription.setOnKeyListener(new View.OnKeyListener() {
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                try {
-                    if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                        switch (keyCode) {
-                            case KeyEvent.KEYCODE_DPAD_CENTER:
-                            case KeyEvent.KEYCODE_ENTER:
-                                TelephonyManager tMgr = (TelephonyManager) CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                                String phoneNumber = tMgr.getLine1Number();
-                                String description = ticketDescription.getText().toString();
-                                revTwo.r2OpenTicket(description, tMgr.getSimOperatorName(), tMgr.getNetworkOperatorName(), phoneNumber, false);
-                                CreateNewTicketActivity.this.setTitle(CreateNewTicketActivity.this.getString(R.string.title_you_have_open_help_request));
-                                lnrTexts.setVisibility(View.VISIBLE);
-                                txtTicketLabelMessage.setText(ticketDescription.getText().toString());
-                                txtTicketLabelMessage.setVisibility(View.VISIBLE);
-                                ticketDescription.setText("");
-                                ticketDescription.setVisibility(View.INVISIBLE);
-                                return true;
-                            default:
-                                break;
-                        }
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+        ticketDescription.setFocusableInTouchMode(true);
+        ticketDescription.requestFocus();
+        ticketDescription.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_SEND) {
+                    /*TelephonyManager tMgr = (TelephonyManager) CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+                    String phoneNumber = tMgr.getLine1Number();*/
+                    String description = ticketDescription.getText().toString();
+                    revTwo.r2OpenTicket(description, "Test Sample", "mail@gmail.com", "061111111", false);
+                    CreateNewTicketActivity.this.setTitle(CreateNewTicketActivity.this.getString(R.string.title_you_have_open_help_request));
+                    lnrTexts.setVisibility(View.VISIBLE);
+                    txtTicketLabelMessage.setText(ticketDescription.getText().toString());
+                    txtTicketLabelMessage.setVisibility(View.VISIBLE);
+                    ticketDescription.setText("");
+                    ticketDescription.setVisibility(View.INVISIBLE);
+                    handled = true;
                 }
-
-                return false;
+                return handled;
             }
         });
+
         txtCancelHelpRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
