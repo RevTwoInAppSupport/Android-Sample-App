@@ -18,6 +18,7 @@ import com.revtwo.librevtwo.RevTwo;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -28,6 +29,7 @@ import butterknife.OnClick;
  */
 public class FileBrowsingActivity extends RFragment {
     private ArrayList<String> fileNames;
+    private String [] excludedFiles = new String[]{"revtwo","revtwo-journal"};
     ArrayAdapter<String> lstAdapter;
 
     @Bind(R.id.lstAppFiles)
@@ -80,23 +82,21 @@ public class FileBrowsingActivity extends RFragment {
             for(File f: file.listFiles()) {
                 if(f.isDirectory()) {
                     this.getFilesFromStorages(f.getAbsolutePath());
-                } else {
-                    String parent = getParentDir(f);
-
+                } else if (shouldIncludeFile(f.getName())) {
                     fileNames.add(getPath(f.getAbsolutePath()));
-
                 }
             }
         }
     }
 
-    private String getParentDir(File f) {
-        String parent = f.getParent();
-        String[] parentSplit = parent.split("/");
-        return parentSplit[parentSplit.length - 1];
-    }
 
     private String getPath(String fullPath){
-        return fullPath.split(getActivity().getPackageName())[1].replaceFirst("/","");
+        return fullPath.split(getActivity().getPackageName()+"/")[1];
     }
+
+    private boolean shouldIncludeFile(String filename){
+        return !Arrays.asList(excludedFiles).contains(filename);
+    }
+
+
 }
