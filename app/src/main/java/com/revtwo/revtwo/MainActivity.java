@@ -13,14 +13,13 @@ public class MainActivity extends RActivity {
 
     private RevTwo revTwo;
 
-
     protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main_new);
     ButterKnife.bind(this);
 
     revTwo = new RevTwo(this);
-    revTwo.r2Intialize("253B1C2A-34FB-A08A-3981-4B3D87728C9B", "3qQJsrLpNnWvCbD6PcKHztS5d", R2ModeEnum.R2MODE_DEVELOPMENT.getValue());
+    revTwo.r2Intialize("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXX", R2ModeEnum.R2MODE_DEVELOPMENT.getValue());
     /*revTwo.r2CustomizeIncomingCallText("Nihad Ahmetovic calling");
         revTwo.r2CustomizeIncomingCallBackgroundColor("#CDCDCD");
         revTwo.r2CustomizeIncomingCallTextColor("#EEEEEE");
