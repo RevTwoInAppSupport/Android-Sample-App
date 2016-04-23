@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -79,17 +80,17 @@ public class CreateNewTicketActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 boolean handled = false;
-                if (actionId == EditorInfo.IME_ACTION_SEND) {
-                    /*TelephonyManager tMgr = (TelephonyManager) CreateNewTicketActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                    String phoneNumber = tMgr.getLine1Number();*/
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
                     String description = ticketDescription.getText().toString();
-                    revTwo.r2OpenTicket(description, "Test Sample", "mail@gmail.com", "061111111", false);
+                    revTwo.r2OpenTicket(description, "", "", "", false);
                     CreateNewTicketActivity.this.setTitle(CreateNewTicketActivity.this.getString(R.string.title_you_have_open_help_request));
                     lnrTexts.setVisibility(View.VISIBLE);
                     txtTicketLabelMessage.setText(ticketDescription.getText().toString());
                     txtTicketLabelMessage.setVisibility(View.VISIBLE);
                     ticketDescription.setText("");
                     ticketDescription.setVisibility(View.INVISIBLE);
+                    InputMethodManager inputManager = (InputMethodManager) CreateNewTicketActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputManager.toggleSoftInput(0, 0);
                     handled = true;
                 }
                 return handled;

@@ -26,7 +26,7 @@
             android:layout_marginTop="?attr/actionBarSize"
             android:hint="@string/create_ticket_placeholder"
             android:layout_weight="0.95"
-            android:imeOptions="actionSend"
+            android:imeOptions="actionDone"
             android:inputType="text"
             android:gravity="top"
             android:paddingTop="20dp"
