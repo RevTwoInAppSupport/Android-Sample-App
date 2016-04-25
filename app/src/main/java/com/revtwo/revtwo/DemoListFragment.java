@@ -19,8 +19,12 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by harisk on 4/12/16.
+/*
+ *  DemoListFragment.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 4/12/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class DemoListFragment extends RFragment {
 

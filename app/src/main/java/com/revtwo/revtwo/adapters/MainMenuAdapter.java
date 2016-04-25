@@ -13,8 +13,12 @@ import com.revtwo.revtwo.models.MenuItem;
 
 import java.util.List;
 
-/**
- * Created by Zajim on 13-Feb-16.
+/*
+ *  MainMenuAdapter.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 2/13/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class MainMenuAdapter extends ArrayAdapter {
 

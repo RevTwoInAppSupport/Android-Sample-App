@@ -24,8 +24,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by NIHAD on 11.2.2016.
+/*
+ *  FileBrowsingActivity.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 2/11/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class FileBrowsingActivity extends RFragment {
     private ArrayList<String> fileNames;

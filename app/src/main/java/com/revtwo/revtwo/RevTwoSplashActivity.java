@@ -5,8 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-/**
- * Created by zajim on 04/04/16.
+/*
+ *  RevTwoSplashActivity.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 4/4/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class RevTwoSplashActivity extends Activity {
 

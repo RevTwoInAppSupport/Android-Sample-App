@@ -16,9 +16,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-
-/**
- * Created by Zajim on 10-Feb-16.
+/*
+ *  LoggingActivity.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 2/10/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class LoggingActivity extends RFragment {
     private RevTwo revTwo;

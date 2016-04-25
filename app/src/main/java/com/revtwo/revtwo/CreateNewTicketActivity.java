@@ -26,8 +26,12 @@ import android.widget.TextView;
 
 import com.revtwo.librevtwo.RevTwo;
 
-/**
- * Created by NIHAD on 10.2.2016.
+/*
+ *  CreateNewTicketActivity.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 2/10/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class CreateNewTicketActivity extends AppCompatActivity {
     private EditText ticketDescription;

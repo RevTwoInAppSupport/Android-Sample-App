@@ -5,8 +5,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-/**
- * Created by harisk on 4/12/16.
+/*
+ *  RActivity.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 4/12/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class RActivity extends AppCompatActivity {
 

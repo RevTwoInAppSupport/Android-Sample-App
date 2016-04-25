@@ -18,8 +18,12 @@ import com.revtwo.librevtwo.RevTwo;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by NIHAD on 11.2.2016.
+/*
+ *  SQLiteDatabaseActivity.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 2/11/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class SQLiteDatabaseActivity extends RFragment {
 
