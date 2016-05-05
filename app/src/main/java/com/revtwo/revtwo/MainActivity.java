@@ -9,6 +9,13 @@ import com.revtwo.librevtwo.RevTwo;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/*
+ *  MainActivity.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 2/10/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
+ */
 public class MainActivity extends RActivity {
 
     private RevTwo revTwo;
@@ -20,7 +27,7 @@ public class MainActivity extends RActivity {
 
     revTwo = new RevTwo(this);
     revTwo.r2Intialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", R2ModeEnum.R2MODE_DEVELOPMENT.getValue());
-    /*revTwo.r2CustomizeIncomingCallText("Nihad Ahmetovic calling");
+    /*revTwo.r2CustomizeIncomingCallText("RevTwo calling");
         revTwo.r2CustomizeIncomingCallBackgroundColor("#CDCDCD");
         revTwo.r2CustomizeIncomingCallTextColor("#EEEEEE");
         revTwo.r2CustomizeIncomingCallImage(R.drawable.rev_two_splash_screen);*/

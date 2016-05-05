@@ -1,7 +1,11 @@
 package com.revtwo.revtwo.models;
 
-/**
- * Created by Zajim on 13-Feb-16.
+/*
+ *  MenuItem.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 2/13/2016.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class MenuItem {
     private int id;
