@@ -29,5 +29,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.revtwo:librevtwo:1.0.0.22'
+    compile project(':revtwo')
+    //compile 'com.revtwo:librevtwo:1.0.0.22'
 }

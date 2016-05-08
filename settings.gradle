@@ -1,2 +1,3 @@
 include ':app'
-include ':app:libs:librevtwo'
+include ':revtwo', ':app'
+project(':revtwo').projectDir = new File(settingsDir, '../RevTwo-Android-Library')

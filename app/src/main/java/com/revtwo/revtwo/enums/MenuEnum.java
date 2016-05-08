@@ -11,7 +11,8 @@ public enum MenuEnum {
     LOGGING(1000),
     FILE_BROWSING(1001),
     SQLITE_DATABASE(1002),
-    CREATE_NEW_TICKET(1003);
+    CREATE_NEW_TICKET(1003),
+    COMMUNITY(1004);
     private int value;
     private MenuEnum(int value) {
         this.value = value;

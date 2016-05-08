@@ -3,13 +3,14 @@ package com.revtwo.revtwo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.revtwo.librevtwo.CreateNewTicketActivity;
+import com.revtwo.librevtwo.R2CommunityActivity;
 import com.revtwo.revtwo.adapters.MainMenuAdapter;
 import com.revtwo.revtwo.enums.MenuEnum;
 import com.revtwo.revtwo.models.MenuItem;
@@ -52,6 +53,8 @@ public class DemoListFragment extends RFragment {
         menuItems.add(new MenuItem(MenuEnum.FILE_BROWSING.getValue(), this.getString(R.string.menu_title_file_browsing)));
         menuItems.add(new MenuItem(MenuEnum.SQLITE_DATABASE.getValue(), this.getString(R.string.menu_title_sqlite_database)));
         menuItems.add(new MenuItem(MenuEnum.CREATE_NEW_TICKET.getValue(), this.getString(R.string.menu_title_create_new_ticket)));
+        menuItems.add(new MenuItem(MenuEnum.COMMUNITY.getValue(), this.getString(R.string.menu_title_community)));
+
 
         list.setAdapter(new MainMenuAdapter(getActivity(), R.layout.list_menu_item_main_activity, menuItems));
         list.setOnItemClickListener(new OnMenuItemClick());
@@ -74,6 +77,11 @@ public class DemoListFragment extends RFragment {
             else if(viewId == MenuEnum.CREATE_NEW_TICKET.getValue()) {
                 Intent createNewTicketFragment = new Intent(getActivity(), CreateNewTicketActivity.class);
                 startActivity(createNewTicketFragment);
+            }
+            else if(viewId == MenuEnum.COMMUNITY.getValue()){
+                Intent community = new Intent(getActivity(), R2CommunityActivity.class);
+                startActivity(community);
+
             }
 
         }

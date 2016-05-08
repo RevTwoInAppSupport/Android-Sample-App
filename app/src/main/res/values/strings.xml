@@ -1,26 +1,21 @@
 <resources>
-    <string name="action_create_new_ticket_label">Create new ticket</string>
     <string name="action_end_call_label">End Call</string>
     <string name="action_mute_call_label">Mute Call</string>
     <string name="action_use_speaker_label">Use Speaker</string>
     <string name="action_refresh_label">Refresh</string>
     <string name="app_name">RevTwo</string>
     <string name="action_settings_label">Settings</string>
-    <string name="cancel_help_request_label">Cancel Help Request</string>
-    <string name="create_ticket_placeholder">Enter description of Ticket</string>
     <string name="empty_list_view_text">There are no files in this app.</string>
-    <string name="help_request_text">You can only make one request for help at a time. If you no longer need help, please close this request.</string>
     <string name="menu_title_logging">Logging</string>
     <string name="menu_title_file_browsing">File Browsing</string>
     <string name="menu_title_sqlite_database">SQLite Database</string>
     <string name="menu_title_create_new_ticket">Create New Ticket</string>
+    <string name="menu_title_community">Community</string>
     <string name="sqlite">
         By default, the database browsing widget is hooked up to the sample.db database. \n\n
         You can edit the model to add catalog.db as another database.
     </string>
     <string name="title_file_browsing">File browsing</string>
     <string name="title_sqlite_db">Db browser</string>
-    <string name="title_ask_for_help">Ask for help</string>
-    <string name="title_you_have_open_help_request">You have an open help request</string>
     <string name="title_logging">Logging</string>
 </resources>
