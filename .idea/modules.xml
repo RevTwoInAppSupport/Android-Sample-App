@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-Sample-App.iml" filepath="$PROJECT_DIR$/Android-Sample-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/libs/librevtwo/librevtwo.iml" filepath="$PROJECT_DIR$/app/libs/librevtwo/librevtwo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../RevTwo-Android-Library/revtwo.iml" filepath="$PROJECT_DIR$/../RevTwo-Android-Library/revtwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/libs/librevtwo/librevtwo.iml" filepath="$PROJECT_DIR$/app/libs/librevtwo/librevtwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/libs/libs.iml" filepath="$PROJECT_DIR$/app/libs/libs.iml" />
     </modules>
   </component>
 </project>
