@@ -31,7 +31,7 @@ public class MainActivity extends RActivity {
         revTwo.r2CustomizeIncomingCallBackgroundColor("#CDCDCD");
         revTwo.r2CustomizeIncomingCallTextColor("#EEEEEE");
         revTwo.r2CustomizeIncomingCallImage(R.drawable.rev_two_splash_screen);*/
-        revTwo.r2RegisterActivityForScreenshot(this);
+    revTwo.r2RegisterActivityForScreenshot(this);
     showDemoListFragment();
 
 }
