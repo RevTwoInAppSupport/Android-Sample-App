@@ -76,14 +76,13 @@ public class DemoListFragment extends RFragment {
             }
             else if(viewId == MenuEnum.CREATE_NEW_TICKET.getValue()) {
                 Intent createNewTicketFragment = new Intent(getActivity(), CreateNewTicketActivity.class);
+                createNewTicketFragment.putExtra("community", false);
                 startActivity(createNewTicketFragment);
             }
             else if(viewId == MenuEnum.COMMUNITY.getValue()){
                 Intent community = new Intent(getActivity(), R2CommunityActivity.class);
                 startActivity(community);
-
             }
-
         }
     }
 }

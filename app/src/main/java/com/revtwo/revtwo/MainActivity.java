@@ -26,7 +26,7 @@ public class MainActivity extends RActivity {
     ButterKnife.bind(this);
 
     revTwo = new RevTwo(this);
-    revTwo.r2Intialize("F840AC8B-85D4-2272-F344-F0F0E133BED5", "Fb7RTQzv6nKwtXf2d4ZN39sWV", R2ModeEnum.R2MODE_DEVELOPMENT.getValue());
+    revTwo.r2Intialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", R2ModeEnum.R2MODE_DEVELOPMENT.getValue());
     /*revTwo.r2CustomizeIncomingCallText("RevTwo calling");
         revTwo.r2CustomizeIncomingCallBackgroundColor("#CDCDCD");
         revTwo.r2CustomizeIncomingCallTextColor("#EEEEEE");
