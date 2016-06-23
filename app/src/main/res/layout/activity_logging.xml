@@ -50,6 +50,7 @@
         android:textColor="#FFF"
         android:background="#b20122"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/activity_padding"
         android:onClick="onErrorLogClick"/>
     </LinearLayout>
 </FrameLayout>
