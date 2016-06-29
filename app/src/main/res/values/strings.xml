@@ -9,8 +9,8 @@
     <string name="menu_title_logging">Logging</string>
     <string name="menu_title_file_browsing">File Browsing</string>
     <string name="menu_title_sqlite_database">SQLite Database</string>
-    <string name="menu_title_create_new_ticket">Create New Ticket</string>
-    <string name="menu_title_community">Community</string>
+    <string name="menu_title_my_ticket_view">My Ticket View</string>
+    <string name="menu_title_community_view">Community View</string>
     <string name="sqlite">
         By default, the database browsing widget is hooked up to the sample.db database. \n\n
         You can edit the model to add catalog.db as another database.
