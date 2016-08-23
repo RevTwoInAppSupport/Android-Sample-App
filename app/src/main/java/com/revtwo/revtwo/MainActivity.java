@@ -3,6 +3,7 @@ package com.revtwo.revtwo;
 import android.os.Bundle;;
 import android.support.v7.widget.Toolbar;
 
+import com.revtwo.librevtwo.IRevTwo;
 import com.revtwo.librevtwo.R2ModeEnum;
 import com.revtwo.librevtwo.RevTwo;
 
@@ -26,7 +27,11 @@ public class MainActivity extends RActivity {
     ButterKnife.bind(this);
 
     revTwo = new RevTwo(this);
-    revTwo.r2Intialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", R2ModeEnum.R2MODE_DEVELOPMENT.getValue());
+    revTwo.r2Intialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", R2ModeEnum.R2MODE_DEVELOPMENT.getValue(), new IRevTwo.Callback() {
+        @Override
+        public void OnInitialized() {
+        }
+    });
     /*revTwo.r2CustomizeIncomingCallText("RevTwo calling");
         revTwo.r2CustomizeIncomingCallBackgroundColor("#CDCDCD");
         revTwo.r2CustomizeIncomingCallTextColor("#EEEEEE");
