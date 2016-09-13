@@ -1,3 +1,6 @@
 include ':app'
-include ':revtwo', ':app'
-project(':revtwo').projectDir = new File(settingsDir, '../RevTwo-Android-Library')
+include ':revtwolib',':revtwolib.core', ':revtwolib.dataaccess', ':revtwolib.models', ':app'
+project(':revtwolib').projectDir = new File(settingsDir, '/NewLibrary/revtwolib')
+project(':revtwolib.core').projectDir = new File(settingsDir, '/NewLibrary/revtwolib.core')
+project(':revtwolib.dataaccess').projectDir = new File(settingsDir, '/NewLibrary/revtwolib.dataaccess')
+project(':revtwolib.models').projectDir = new File(settingsDir, '/NewLibrary/revtwolib.models')

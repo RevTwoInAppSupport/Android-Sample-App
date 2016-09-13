@@ -13,9 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.revtwo.librevtwo.RevTwo;
+import com.revtwo.revtwolib.RevTwo;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /*
@@ -27,9 +27,9 @@ import butterknife.ButterKnife;
  */
 public class SQLiteDatabaseActivity extends RFragment {
 
-    @Bind(R.id.tlbActionBar)
+    @BindView(R.id.tlbActionBar)
     Toolbar myToolbar;
-    @Bind(R.id.txtTitle)
+    @BindView(R.id.txtTitle)
     TextView title;
 
 
@@ -39,7 +39,6 @@ public class SQLiteDatabaseActivity extends RFragment {
         ButterKnife.bind(this,view);
         ((AppCompatActivity) getActivity()).setSupportActionBar(myToolbar);
         this.setTitle(this.getString(R.string.title_sqlite_db), title);
-        new RevTwo(this.getContext()).r2RegisterActivityForScreenshot(this.getActivity());
         return view;
     }
 

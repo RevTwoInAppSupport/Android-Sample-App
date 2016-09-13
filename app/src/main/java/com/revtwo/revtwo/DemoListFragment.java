@@ -9,15 +9,16 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.revtwo.librevtwo.CreateTicketActivity;
-import com.revtwo.librevtwo.R2CommunityActivity;
 import com.revtwo.revtwo.adapters.MainMenuAdapter;
 import com.revtwo.revtwo.enums.MenuEnum;
 import com.revtwo.revtwo.models.MenuItem;
+import com.revtwo.revtwolib.CommunityActivity;
+import com.revtwo.revtwolib.MyTicketActivity;
+import com.revtwo.revtwolib.R2;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /*
@@ -29,7 +30,7 @@ import butterknife.ButterKnife;
  */
 public class DemoListFragment extends RFragment {
 
-    @Bind(R.id.fragment_demo_list)
+    @BindView(R.id.fragment_demo_list)
     ListView list;
     private ArrayList<MenuItem> menuItems;
 
@@ -37,7 +38,7 @@ public class DemoListFragment extends RFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_demo_list,null);
+        View view = inflater.inflate(R.layout.fragment_demo_list,container,false);
         ButterKnife.bind(this,view);
         return view;
     }
@@ -75,14 +76,14 @@ public class DemoListFragment extends RFragment {
                 ((MainActivity)getActivity()).showFragment(SQLiteDatabaseActivity.class);
             }
             else if(viewId == MenuEnum.MY_TICKET_VIEW.getValue()) {
-                Intent createNewTicketFragment = new Intent(getActivity(), CreateTicketActivity.class);
-                createNewTicketFragment.putExtra(CreateTicketActivity.TAGS,new String []{"yellow","blue"});
+                Intent createNewTicketFragment = new Intent(getActivity(), MyTicketActivity.class);
+                createNewTicketFragment.putExtra(MyTicketActivity.TAGS,new String []{"yellow","blue"});
                 startActivity(createNewTicketFragment);
             }
             else if(viewId == MenuEnum.COMMUNITY_VIEW.getValue()){
 
-                Intent community = new Intent(getActivity(), R2CommunityActivity.class);
-                community.putExtra(R2CommunityActivity.TAGS,new String[]{"yellow"});
+                Intent community = new Intent(getActivity(), CommunityActivity.class);
+                community.putExtra(CommunityActivity.TAGS,new String[]{"yellow"});
                 startActivity(community);
 
             }

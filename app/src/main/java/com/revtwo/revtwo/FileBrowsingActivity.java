@@ -13,14 +13,14 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.revtwo.librevtwo.RevTwo;
+import com.revtwo.revtwolib.RevTwo;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -36,26 +36,25 @@ public class FileBrowsingActivity extends RFragment {
     private String [] excludedFiles = new String[]{"revtwo","revtwo-journal"};
     ArrayAdapter<String> lstAdapter;
 
-    @Bind(R.id.lstAppFiles)
+    @BindView(R.id.lstAppFiles)
     ListView lstAppFiles;
-    @Bind(android.R.id.empty)
+    @BindView(android.R.id.empty)
     TextView emptyListViewText;
-    @Bind(R.id.tlbActionBar)
+    @BindView(R.id.tlbActionBar)
     Toolbar myToolbar;
-    @Bind(R.id.txtThirdButton)
+    @BindView(R.id.txtThirdButton)
     TextView txtThirdButton;
-    @Bind(R.id.txtTitle)
+    @BindView(R.id.txtTitle)
     TextView title;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_file_browsing, container,false);
+        View view = inflater.inflate(R.layout.activity_file_browsing,null);
         ButterKnife.bind(this, view);
         lstAppFiles.setEmptyView(emptyListViewText);
         ((AppCompatActivity)getActivity()).setSupportActionBar(myToolbar);
         this.setTitle(this.getString(R.string.title_file_browsing), title);
-        new RevTwo(this.getContext()).r2RegisterActivityForScreenshot(this.getActivity());
         this.showThirdButton("refresh");
         refreshFileList();
 

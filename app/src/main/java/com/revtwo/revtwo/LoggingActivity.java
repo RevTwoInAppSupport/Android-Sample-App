@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.revtwo.librevtwo.RevTwo;
+import com.revtwo.revtwolib.RevTwo;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -24,10 +24,9 @@ import butterknife.OnClick;
  *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
 public class LoggingActivity extends RFragment {
-    private RevTwo revTwo;
-    @Bind(R.id.tlbActionBar)
+    @BindView(R.id.tlbActionBar)
     Toolbar myToolbar;
-    @Bind(R.id.txtTitle)
+    @BindView(R.id.txtTitle)
     TextView title;
 
 
@@ -40,29 +39,26 @@ public class LoggingActivity extends RFragment {
 
         this.setTitle(this.getString(R.string.title_logging), title);
 
-        revTwo = new RevTwo(this.getContext());
-        revTwo.r2RegisterActivityForScreenshot(this.getActivity());
-
         return view;
     }
 
     @OnClick(R.id.btnTraceLog)
     public void sendTraceLog(){
-        revTwo.r2Trace("Trace Log Message");
+        RevTwo.Trace("Trace Log Message", LoggingActivity.this.getContext());
 
     }
     @OnClick(R.id.btnDebugLog)
     public void sendDebugLog(){
-        revTwo.r2Debug("Debug Log Message");
+        RevTwo.Debug("Debug Log Message", LoggingActivity.this.getContext());
 
     }
     @OnClick(R.id.btnWarningLog)
     public void sendWarningLog(){
-        revTwo.r2Warn("Warning Log Message");
+        RevTwo.Warn("Warning Log Message", LoggingActivity.this.getContext());
     }
     @OnClick(R.id.btnErrorLog)
     public void sendErrorLog(){
-        revTwo.r2Error("Error Log Message");
+        RevTwo.Error("Error Log Message", LoggingActivity.this.getContext());
     }
 
 }

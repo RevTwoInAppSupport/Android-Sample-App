@@ -5,6 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.revtwo.revtwolib.RevTwo;
+import com.revtwo.revtwolibmodels.InitializeResponse;
+import com.revtwo.revtwolibmodels.callback.Callback;
+import com.revtwo.revtwolibmodels.enumerations.ModeEnum;
+
 /*
  *  RevTwoSplashActivity.java
  *  RevTwo-Sample-App
@@ -14,19 +19,17 @@ import android.os.Handler;
  */
 public class RevTwoSplashActivity extends Activity {
 
-    private static int SPLASH_TIME_OUT = 1000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_activity);
-        new Handler().postDelayed(new Runnable() {
+        RevTwo.initialize("3A670394-CD38-C21A-1807-8B3A39D268BC", "3CKThMt7Q9VzsgLd5NwJnmS2c", ModeEnum.R2MODE_DEVELOPMENT, this, new Callback<Void>() {
             @Override
-            public void run() {
+            public void onSuccess(Void param) {
+                super.onSuccess(param);
                 startMainActivity();
-                finish();
             }
-        }, SPLASH_TIME_OUT);
+        });
     }
 
     private void startMainActivity() {

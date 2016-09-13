@@ -4,8 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-Sample-App.iml" filepath="$PROJECT_DIR$/Android-Sample-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/libs/librevtwo/librevtwo.iml" filepath="$PROJECT_DIR$/app/libs/librevtwo/librevtwo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../RevTwo-Android-Library/revtwo.iml" filepath="$PROJECT_DIR$/../RevTwo-Android-Library/revtwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../librevtwo/revtwo.iml" filepath="$PROJECT_DIR$/../librevtwo/revtwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../NewLibrary/revtwolib/revtwolib.iml" filepath="$PROJECT_DIR$/../NewLibrary/revtwolib/revtwolib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLibrary/revtwolib.core/revtwolib.core.iml" filepath="$PROJECT_DIR$/NewLibrary/revtwolib.core/revtwolib.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLibrary/revtwolib.dataaccess/revtwolib.dataaccess.iml" filepath="$PROJECT_DIR$/NewLibrary/revtwolib.dataaccess/revtwolib.dataaccess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLibrary/revtwolib.models/revtwolib.models.iml" filepath="$PROJECT_DIR$/NewLibrary/revtwolib.models/revtwolib.models.iml" />
     </modules>
   </component>
 </project>

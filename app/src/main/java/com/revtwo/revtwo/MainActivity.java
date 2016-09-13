@@ -3,11 +3,11 @@ package com.revtwo.revtwo;
 import android.os.Bundle;;
 import android.support.v7.widget.Toolbar;
 
-import com.revtwo.librevtwo.IRevTwo;
-import com.revtwo.librevtwo.R2ModeEnum;
-import com.revtwo.librevtwo.RevTwo;
+import com.revtwo.revtwolib.RevTwo;
+import com.revtwo.revtwolibmodels.InitializeResponse;
+import com.revtwo.revtwolibmodels.callback.Callback;
+import com.revtwo.revtwolibmodels.enumerations.ModeEnum;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /*
@@ -19,27 +19,14 @@ import butterknife.ButterKnife;
  */
 public class MainActivity extends RActivity {
 
-    private RevTwo revTwo;
-
     protected void onCreate(Bundle savedInstanceState){
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main_new);
-    ButterKnife.bind(this);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_new);
+        ButterKnife.bind(this);
+        showDemoListFragment();
 
-    revTwo = new RevTwo(this);
-    revTwo.r2Intialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", R2ModeEnum.R2MODE_DEVELOPMENT.getValue(), new IRevTwo.Callback() {
-        @Override
-        public void OnInitialized() {
-        }
-    });
-    /*revTwo.r2CustomizeIncomingCallText("RevTwo calling");
-        revTwo.r2CustomizeIncomingCallBackgroundColor("#CDCDCD");
-        revTwo.r2CustomizeIncomingCallTextColor("#EEEEEE");
-        revTwo.r2CustomizeIncomingCallImage(R.drawable.rev_two_splash_screen);*/
-    revTwo.r2RegisterActivityForScreenshot(this);
-    showDemoListFragment();
-
-}
+        RevTwo.registerActivityForScreenshot(this);
+    }
 
     @Override
     public void onBackPressed() {

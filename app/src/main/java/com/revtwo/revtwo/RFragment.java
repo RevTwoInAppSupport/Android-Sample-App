@@ -1,11 +1,12 @@
 package com.revtwo.revtwo;
 
-import android.support.annotation.Nullable;
+
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.TextView;
 
 import butterknife.OnClick;
+import butterknife.Optional;
 
 /*
  *  RFragment.java
@@ -20,7 +21,7 @@ public class RFragment extends Fragment {
         titleView.setText(title);
     }
 
-    @Nullable
+    @Optional
     @OnClick(R.id.lnrBackButton)
     public void onBack(){
         ((MainActivity)getActivity()).onBackPressed();
