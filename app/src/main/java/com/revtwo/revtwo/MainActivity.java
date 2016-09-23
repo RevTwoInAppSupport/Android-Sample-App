@@ -25,7 +25,7 @@ public class MainActivity extends RActivity {
         ButterKnife.bind(this);
         showDemoListFragment();
 
-        RevTwo.registerActivityForScreenshot(this);
+        RevTwo.registerActivityForScreenshare(this);
     }
 
     @Override
