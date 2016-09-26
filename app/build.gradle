@@ -12,7 +12,9 @@ buildscript {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
+
 apply from : "revtwo.gradle"
+
 
 android {
     compileSdkVersion 23

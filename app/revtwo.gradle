@@ -1,3 +1,5 @@
+apply plugin: 'com.neenbedankt.android-apt'
+
 buildscript {
     repositories {
         jcenter()
@@ -5,41 +7,6 @@ buildscript {
     dependencies {
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.2.0'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-    }
-}
-
-apply plugin: 'com.android.library'
-apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'com.jakewharton.butterknife'
-
-
-android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
-
-    defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    sourceSets {
-        main {
-            manifest.srcFile 'src/main/AndroidManifest.xml'
-            res.srcDirs = ['src/main/res']
-
-            java {
-                // Import. Otherwise downstream modules won't see generated codes
-                srcDir 'build/source/dagger-gen'
-            }
-        }
     }
 }
 
