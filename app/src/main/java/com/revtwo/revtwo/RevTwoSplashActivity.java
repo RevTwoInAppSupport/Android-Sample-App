@@ -3,10 +3,8 @@ package com.revtwo.revtwo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 
 import com.revtwo.revtwolib.RevTwo;
-import com.revtwo.revtwolibmodels.InitializeResponse;
 import com.revtwo.revtwolibmodels.callback.Callback;
 import com.revtwo.revtwolibmodels.enumerations.ModeEnum;
 
@@ -23,11 +21,18 @@ public class RevTwoSplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_activity);
-        RevTwo.initialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", ModeEnum.R2MODE_DEVELOPMENT, this, new Callback<Void>() {
+
+        RevTwo.initialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", ModeEnum.R2MODE_DEVELOPMENT, true, this, new Callback() {
             @Override
-            public void onSuccess(Void param) {
+            public void onSuccess(Object param) {
                 super.onSuccess(param);
                 startMainActivity();
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                super.onError(t);
+                // Error handling
             }
         });
     }
