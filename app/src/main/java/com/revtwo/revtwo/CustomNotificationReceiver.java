@@ -28,12 +28,14 @@ public class CustomNotificationReceiver extends NotificationBroadcastReceiver {
                 .setDefaults(NotificationCompat.DEFAULT_SOUND)
                 .setPriority(2);
 
-                 Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+                 //Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
 
-                //Intent intent = new Intent(context, ChatActivity.class);
+                Intent intent = new Intent(context, RevTwoSplashActivity.class);
+                intent.setAction(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
                 //Long ticketIdArgValue = Long.valueOf(ticketId);
                 //intent.putExtra("ticketId",ticketIdArgValue);
-                //intent.addFlags(Intent.);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_ONE_SHOT);
         notificationBuilder.setContentIntent(pendingIntent);
