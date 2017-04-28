@@ -27,6 +27,7 @@ public class RevTwoSplashActivity extends Activity {
             public void onSuccess(Object param) {
                 super.onSuccess(param);
                 startMainActivity();
+                finish();
             }
 
             @Override
@@ -35,6 +36,7 @@ public class RevTwoSplashActivity extends Activity {
                 // Error handling
             }
         });
+
     }
 
     private void startMainActivity() {

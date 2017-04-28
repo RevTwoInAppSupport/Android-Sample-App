@@ -33,5 +33,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".CustomNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.revtwo.action.NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
