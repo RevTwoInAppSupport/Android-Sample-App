@@ -13,8 +13,10 @@ import com.revtwo.revtwo.adapters.MainMenuAdapter;
 import com.revtwo.revtwo.enums.MenuEnum;
 import com.revtwo.revtwo.models.MenuItem;
 import com.revtwo.revtwolib.CommunityActivity;
+import com.revtwo.revtwolib.KBAnswersActivity;
 import com.revtwo.revtwolib.MyTicketActivity;
 import com.revtwo.revtwolib.R2;
+import com.revtwo.revtwolibcore.RatingActivity;
 
 import java.util.ArrayList;
 
@@ -55,6 +57,7 @@ public class DemoListFragment extends RFragment {
         menuItems.add(new MenuItem(MenuEnum.SQLITE_DATABASE.getValue(), this.getString(R.string.menu_title_sqlite_database)));
         menuItems.add(new MenuItem(MenuEnum.MY_TICKET_VIEW.getValue(), this.getString(R.string.menu_title_my_ticket_view)));
         menuItems.add(new MenuItem(MenuEnum.COMMUNITY_VIEW.getValue(), this.getString(R.string.menu_title_community_view)));
+        menuItems.add(new MenuItem(MenuEnum.FAQ_VIEW.getValue(),this.getString(R.string.menu_title_faq_view)));
 
 
         list.setAdapter(new MainMenuAdapter(getActivity(), R.layout.list_menu_item_main_activity, menuItems));
@@ -87,7 +90,9 @@ public class DemoListFragment extends RFragment {
                 community.putExtra(CommunityActivity.TAGS,new String[]{"yellow"});
                 community.putExtra(CommunityActivity.TAG_BACK_BUTTON,"Tutorials");
                 startActivity(community);
-
+            }else if(viewId == MenuEnum.FAQ_VIEW.getValue()){
+                Intent faqIntent = new Intent(getActivity(),KBAnswersActivity.class);
+                startActivity(faqIntent);
             }
 
         }

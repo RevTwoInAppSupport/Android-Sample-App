@@ -18,4 +18,5 @@
     <string name="title_file_browsing">File browsing</string>
     <string name="title_sqlite_db">Db browser</string>
     <string name="title_logging">Logging</string>
+    <string name="menu_title_faq_view">FAQ</string>
 </resources>
