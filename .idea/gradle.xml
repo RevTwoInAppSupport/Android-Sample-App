@@ -9,6 +9,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib" />
+            <option value="$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.core" />
+            <option value="$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.dataaccess" />
+            <option value="$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.models" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

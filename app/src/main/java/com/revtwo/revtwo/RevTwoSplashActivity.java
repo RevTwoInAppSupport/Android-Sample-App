@@ -22,7 +22,7 @@ public class RevTwoSplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_activity);
 
-        RevTwo.initialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", ModeEnum.R2MODE_DEVELOPMENT, true, this, new Callback() {
+        RevTwo.initialize("93D0B119-7D97-8A3A-5C9F-3945C8464AE0", "6gZPk4cxpj7rCzBfLSTbNQVtM", ModeEnum.R2MODE_DEVELOPMENT, true, this, new Callback() {
             @Override
             public void onSuccess(Object param) {
                 super.onSuccess(param);

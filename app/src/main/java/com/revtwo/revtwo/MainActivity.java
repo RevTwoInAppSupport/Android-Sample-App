@@ -1,14 +1,12 @@
 package com.revtwo.revtwo;
 
-import android.os.Bundle;;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 
 import com.revtwo.revtwolib.RevTwo;
-import com.revtwo.revtwolibmodels.InitializeResponse;
-import com.revtwo.revtwolibmodels.callback.Callback;
-import com.revtwo.revtwolibmodels.enumerations.ModeEnum;
 
 import butterknife.ButterKnife;
+
+;
 
 /*
  *  MainActivity.java
