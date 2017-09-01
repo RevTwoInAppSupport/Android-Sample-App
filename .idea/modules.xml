@@ -3,13 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-Sample-App.iml" filepath="$PROJECT_DIR$/Android-Sample-App.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Android-Sample-App.iml" filepath="$PROJECT_DIR$/Android-Sample-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib/revtwolib.iml" filepath="$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib/revtwolib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.core/revtwolib.core.iml" filepath="$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.core/revtwolib.core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.dataaccess/revtwolib.dataaccess.iml" filepath="$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.dataaccess/revtwolib.dataaccess.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.models/revtwolib.models.iml" filepath="$PROJECT_DIR$/../RevTwo-Android-Libsrc/revtwolib.models/revtwolib.models.iml" />
     </modules>
   </component>
 </project>
