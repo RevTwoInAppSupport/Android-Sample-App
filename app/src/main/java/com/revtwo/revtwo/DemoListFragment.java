@@ -17,6 +17,8 @@ import com.revtwo.revtwolib.KBAnswersActivity;
 import com.revtwo.revtwolib.MyTicketActivity;
 import com.revtwo.revtwolib.R2;
 import com.revtwo.revtwolibcore.RatingActivity;
+import com.revtwo.revtwolib.CommunityTicketActivityLaunchOptions;
+import com.revtwo.revtwolib.MyTicketActivityLaunchOptions;
 
 import java.util.ArrayList;
 
