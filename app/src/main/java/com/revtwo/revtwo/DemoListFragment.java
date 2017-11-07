@@ -17,6 +17,8 @@ import com.revtwo.revtwolib.KBAnswersActivity;
 import com.revtwo.revtwolib.MyTicketActivity;
 import com.revtwo.revtwolib.R2;
 import com.revtwo.revtwolibcore.RatingActivity;
+import com.revtwo.revtwolib.CommunityTicketActivityLaunchOptions;
+import com.revtwo.revtwolib.MyTicketActivityLaunchOptions;
 
 import java.util.ArrayList;
 
@@ -79,17 +81,20 @@ public class DemoListFragment extends RFragment {
                 ((MainActivity)getActivity()).showFragment(SQLiteDatabaseActivity.class);
             }
             else if(viewId == MenuEnum.MY_TICKET_VIEW.getValue()) {
-                Intent createNewTicketFragment = new Intent(getActivity(), MyTicketActivity.class);
-                createNewTicketFragment.putExtra(MyTicketActivity.TAGS,new String []{"yellow","blue"});
-                createNewTicketFragment.putExtra(MyTicketActivity.TAG_BACK_BUTTON,"Tutorials");
-                startActivity(createNewTicketFragment);
+                MyTicketActivityLaunchOptions options = new MyTicketActivityLaunchOptions.Builder()
+                        .setTagBackButton("Tutorials")
+                        .setTags(new String[] {"yellow", "blue"})
+                        .build();
+
+                MyTicketActivity.open(getActivity(), options);
             }
             else if(viewId == MenuEnum.COMMUNITY_VIEW.getValue()){
+                CommunityTicketActivityLaunchOptions options = new CommunityTicketActivityLaunchOptions.Builder()
+                        .setTagBackButton("Tutorials")
+                        .setTags(new String[]{"yellow"})
+                        .build();
 
-                Intent community = new Intent(getActivity(), CommunityActivity.class);
-                community.putExtra(CommunityActivity.TAGS,new String[]{"yellow"});
-                community.putExtra(CommunityActivity.TAG_BACK_BUTTON,"Tutorials");
-                startActivity(community);
+                CommunityActivity.open(getActivity(), options);
             }else if(viewId == MenuEnum.FAQ_VIEW.getValue()){
                 Intent faqIntent = new Intent(getActivity(),KBAnswersActivity.class);
                 startActivity(faqIntent);

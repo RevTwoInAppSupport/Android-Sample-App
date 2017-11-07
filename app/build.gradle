@@ -9,7 +9,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.2.0'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
@@ -46,6 +45,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
     compile 'com.jakewharton:butterknife:8.2.0'
-    apt 'com.jakewharton:butterknife-compiler:8.2.0'
-
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.0'
 }
