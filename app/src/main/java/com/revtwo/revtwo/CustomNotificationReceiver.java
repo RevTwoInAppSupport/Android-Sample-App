@@ -12,10 +12,13 @@ import com.revtwo.revtwolibcore.NotificationBroadcastReceiver;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
-/**
- * Created by harisk on 3/21/17.
+/*
+ *  CustomNotificationReceiver.java
+ *  RevTwo-Sample-App
+ *
+ *  Created on 3/21/17.
+ *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
  */
-
 public class CustomNotificationReceiver extends NotificationBroadcastReceiver {
     @Override
     protected void onNotificationReceived(Context context, String ticketId, String message, int unreadMessages, boolean inForeground) {
