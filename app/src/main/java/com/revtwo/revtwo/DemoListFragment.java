@@ -13,11 +13,9 @@ import com.revtwo.revtwo.adapters.MainMenuAdapter;
 import com.revtwo.revtwo.enums.MenuEnum;
 import com.revtwo.revtwo.models.MenuItem;
 import com.revtwo.revtwolib.CommunityActivity;
+import com.revtwo.revtwolib.CommunityTicketActivityLaunchOptions;
 import com.revtwo.revtwolib.KBAnswersActivity;
 import com.revtwo.revtwolib.MyTicketActivity;
-import com.revtwo.revtwolib.R2;
-import com.revtwo.revtwolibcore.RatingActivity;
-import com.revtwo.revtwolib.CommunityTicketActivityLaunchOptions;
 import com.revtwo.revtwolib.MyTicketActivityLaunchOptions;
 
 import java.util.ArrayList;
@@ -61,12 +59,12 @@ public class DemoListFragment extends RFragment {
         menuItems.add(new MenuItem(MenuEnum.COMMUNITY_VIEW.getValue(), this.getString(R.string.menu_title_community_view)));
         menuItems.add(new MenuItem(MenuEnum.FAQ_VIEW.getValue(),this.getString(R.string.menu_title_faq_view)));
 
-
         list.setAdapter(new MainMenuAdapter(getActivity(), R.layout.list_menu_item_main_activity, menuItems));
         list.setOnItemClickListener(new OnMenuItemClick());
     }
 
     private class OnMenuItemClick implements ListView.OnItemClickListener {
+
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -95,11 +93,13 @@ public class DemoListFragment extends RFragment {
                         .build();
 
                 CommunityActivity.open(getActivity(), options);
-            }else if(viewId == MenuEnum.FAQ_VIEW.getValue()){
+            }
+            else if(viewId == MenuEnum.FAQ_VIEW.getValue()){
                 Intent faqIntent = new Intent(getActivity(),KBAnswersActivity.class);
                 startActivity(faqIntent);
             }
 
         }
+
     }
 }
