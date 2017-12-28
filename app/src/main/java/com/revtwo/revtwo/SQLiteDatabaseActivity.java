@@ -39,6 +39,7 @@ public class SQLiteDatabaseActivity extends RFragment {
         ButterKnife.bind(this,view);
         ((AppCompatActivity) getActivity()).setSupportActionBar(myToolbar);
         this.setTitle(this.getString(R.string.title_sqlite_db), title);
+        title.setText("Db browser");
         return view;
     }
 
