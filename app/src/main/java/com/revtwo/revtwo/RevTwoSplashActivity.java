@@ -6,9 +6,8 @@ import android.os.Bundle;
 
 import com.revtwo.revtwolib.ChatActivity;
 import com.revtwo.revtwolib.RevTwo;
-import com.revtwo.revtwolibmodels.callback.Callback;
-import com.revtwo.revtwolibmodels.enumerations.ModeEnum;
-import com.revtwo.revtwolibmodels.enumerations.TicketStatusEnum;
+import com.revtwo.revtwolib.models.callback.Callback;
+import com.revtwo.revtwolib.models.enumerations.ModeEnum;
 
 /*
  *  RevTwoSplashActivity.java

@@ -6,9 +6,9 @@ import android.os.Build;
 import android.os.Bundle;
 
 import com.revtwo.revtwolib.RevTwo;
-import com.revtwo.revtwolibcore.CallReceiverService;
 
 import butterknife.ButterKnife;
+import com.revtwo.revtwolib.core.CallReceiverService;
 
 ;
 

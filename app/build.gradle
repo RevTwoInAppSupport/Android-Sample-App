@@ -23,7 +23,7 @@ android {
     defaultConfig {
         applicationId "com.revtwo.revtwo"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -47,5 +47,8 @@ dependencies {
     compile 'com.android.support:design:25.0.0'
     compile 'com.jakewharton:butterknife:8.2.0'
     apt 'com.jakewharton:butterknife-compiler:8.2.0'
+    compile(project(':revtwolib')) {
+        transitive = false
+    }
     
 }
