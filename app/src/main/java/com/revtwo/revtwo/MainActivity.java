@@ -32,13 +32,13 @@ public class MainActivity extends RActivity {
     }
 
     private void registerReceiver() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        /*if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             BroadcastReceiver broadcastReceiver = new CustomNotificationReceiver();
             IntentFilter intentFilter = new IntentFilter();
             intentFilter.addAction("com.revtwo.action.NOTIFICATION");
 
             CallReceiverService.registerBroadcastReceiver(broadcastReceiver, intentFilter);
-        }
+        }*/
     }
 
     @Override
