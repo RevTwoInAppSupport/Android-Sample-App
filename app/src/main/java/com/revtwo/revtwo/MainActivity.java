@@ -1,14 +1,10 @@
 package com.revtwo.revtwo;
 
-import android.content.BroadcastReceiver;
-import android.content.IntentFilter;
-import android.os.Build;
 import android.os.Bundle;
 
 import com.revtwo.revtwolib.RevTwo;
 
 import butterknife.ButterKnife;
-import com.revtwo.revtwolib.core.CallReceiverService;
 
 ;
 
@@ -27,19 +23,10 @@ public class MainActivity extends RActivity {
         ButterKnife.bind(this);
         showDemoListFragment();
 
-        registerReceiver();
         RevTwo.registerActivityForScreenshare(this);
     }
 
-    private void registerReceiver() {
-        /*if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            BroadcastReceiver broadcastReceiver = new CustomNotificationReceiver();
-            IntentFilter intentFilter = new IntentFilter();
-            intentFilter.addAction("com.revtwo.action.NOTIFICATION");
 
-            CallReceiverService.registerBroadcastReceiver(broadcastReceiver, intentFilter);
-        }*/
-    }
 
     @Override
     public void onBackPressed() {

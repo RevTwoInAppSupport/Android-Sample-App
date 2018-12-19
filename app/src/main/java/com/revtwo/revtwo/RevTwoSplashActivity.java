@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.revtwo.revtwolib.ChatActivity;
 import com.revtwo.revtwolib.RevTwo;
 import com.revtwo.revtwolib.models.callback.Callback;
 import com.revtwo.revtwolib.models.enumerations.ModeEnum;
