@@ -5,7 +5,7 @@ package com.revtwo.revtwo.enums;
  *  RevTwo-Sample-App
  *
  *  Created on 2/10/2016.
- *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
+ *  Copyright (c) 2015-2019 RevTwo, Inc. All rights reserved.
  */
 public enum MenuEnum {
     LOGGING(1000),

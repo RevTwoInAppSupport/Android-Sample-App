@@ -21,7 +21,7 @@ import butterknife.OnClick;
  *  RevTwo-Sample-App
  *
  *  Created on 2/10/2016.
- *  Copyright (c) 2015-2016 RevTwo, Inc. All rights reserved.
+ *  Copyright (c) 2015-2019 RevTwo, Inc. All rights reserved.
  */
 public class LoggingActivity extends RFragment {
     @BindView(R.id.tlbActionBar)
