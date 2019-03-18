@@ -95,8 +95,9 @@ public class DemoListFragment extends RFragment {
                 CommunityActivity.open(getActivity(), options);
             }
             else if(viewId == MenuEnum.FAQ_VIEW.getValue()){
-                Intent faqIntent = new Intent(getActivity(),KBAnswersActivity.class);
-                startActivity(faqIntent);
+                //Intent faqIntent = new Intent(getActivity(),KBAnswersActivity.class);
+                //startActivity(faqIntent);
+                KBAnswersActivity.open(getActivity(),true);
             }
 
         }
