@@ -23,8 +23,8 @@ public class RevTwoSplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_activity);
 
-        //RevTwo.setDomain("https://beta.revtwo.com/index.php/");
-        RevTwo.initialize("6EC7BAB2-AFC2-E085-D0DB-6C711795E1E9", "wSMZR8Cc7pxnmXKfDG9vBTJsV", ModeEnum.R2MODE_DEVELOPMENT, true, this, new Callback() {
+        RevTwo.setDomain("https://beta.revtwo.com/index.php/");
+        RevTwo.initialize("665E7568-226E-9EBB-5E41-6AFA9DB9BFD7", "Fx2pmW8SczfXRTgGQL9JDrjbK", ModeEnum.R2MODE_DEVELOPMENT, true, this, new Callback() {
             @Override
             public void onSuccess(Object param) {
                 super.onSuccess(param);

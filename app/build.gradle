@@ -57,3 +57,5 @@ dependencies {
   implementation project(':revtwolib')
 }
 
+apply plugin: 'com.google.gms.google-services'
+
