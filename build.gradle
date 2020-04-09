@@ -2,15 +2,12 @@
 
 buildscript {
     repositories {
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        google()
         jcenter()
-
+        maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.3.0'
         classpath 'com.google.gms:google-services:4.1.0'
     }
 }
@@ -21,9 +18,12 @@ allprojects {
         flatDir{
             dirs 'libs'
         }
+        google()
+        maven { url "https://jitpack.io" }
+        mavenCentral()
         maven {
-            url 'https://maven.google.com/'
-            name 'Google'
+            name 'Sonatype SNAPSHOTs';
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
         }
     }
 }
