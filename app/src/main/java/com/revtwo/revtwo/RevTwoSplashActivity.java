@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.revtwo.revtwolib.KBAnswersActivity;
 import com.revtwo.revtwolib.RevTwo;
 import com.revtwo.revtwolib.models.callback.Callback;
 import com.revtwo.revtwolib.models.enumerations.ModeEnum;
@@ -22,6 +23,7 @@ public class RevTwoSplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_activity);
 
+        RevTwo.setDomain("https://beta.revtwo.com/index.php/");
         RevTwo.initialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", ModeEnum.R2MODE_DEVELOPMENT, true, this, new Callback() {
             @Override
             public void onSuccess(Object param) {

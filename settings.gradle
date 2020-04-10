@@ -1,1 +1,3 @@
-include ':app'
+include ':app',':revtwolib'
+
+project(':revtwolib').projectDir = new File("../RevTwo-Android-Libsrc/revtwolib")

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.revtwo.revtwolib.RevTwo;
 
 import butterknife.ButterKnife;
+import com.revtwo.revtwolib.models.responses.CreateTicketResponse;
 
 ;
 
@@ -24,6 +25,7 @@ public class MainActivity extends RActivity {
         showDemoListFragment();
 
         RevTwo.registerActivityForScreenshare(this);
+
     }
 
 

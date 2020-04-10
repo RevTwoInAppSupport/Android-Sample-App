@@ -1,8 +1,7 @@
 package com.revtwo.revtwo;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,8 +94,9 @@ public class DemoListFragment extends RFragment {
                 CommunityActivity.open(getActivity(), options);
             }
             else if(viewId == MenuEnum.FAQ_VIEW.getValue()){
-                Intent faqIntent = new Intent(getActivity(),KBAnswersActivity.class);
-                startActivity(faqIntent);
+                //Intent faqIntent = new Intent(getActivity(),KBAnswersActivity.class);
+                //startActivity(faqIntent);
+                KBAnswersActivity.open(getActivity(),true);
             }
 
         }
