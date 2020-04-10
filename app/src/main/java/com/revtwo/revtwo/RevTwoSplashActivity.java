@@ -24,7 +24,7 @@ public class RevTwoSplashActivity extends Activity {
         setContentView(R.layout.splash_screen_activity);
 
         RevTwo.setDomain("https://beta.revtwo.com/index.php/");
-        RevTwo.initialize("665E7568-226E-9EBB-5E41-6AFA9DB9BFD7", "Fx2pmW8SczfXRTgGQL9JDrjbK", ModeEnum.R2MODE_DEVELOPMENT, true, this, new Callback() {
+        RevTwo.initialize("ADD YOUR KEY HERE", "ADD YOUR PRIVATE KEY HERE", ModeEnum.R2MODE_DEVELOPMENT, true, this, new Callback() {
             @Override
             public void onSuccess(Object param) {
                 super.onSuccess(param);
